@@ -57,34 +57,12 @@ import psutil
 import time
 import winsound  # só funciona no Windows
 
-# ALVO = 100  # porcentagem que você quer atingir
-
-# def tocar_alarme():
-#     print("🔔 Bateria chegou a 90%! Desconecte o carregador.")
-#     for _ in range(3):
-#         winsound.Beep(1000, 500)  # frequência, duração (ms)
-#         time.sleep(0.5)
-
-# while True:
-#     bateria = psutil.sensors_battery()
-#     porcentagem = bateria.percent
-#     carregando = bateria.power_plugged
-
-#     print(f"Bateria: {porcentagem}% {'(carregando)' if carregando else '(desplugado)'}")
-
-#     if carregando and porcentagem >= ALVO:
-#         tocar_alarme()
-#         break  # sai do loop depois do aviso
-
-#     time.sleep(30)  # checa a cada 30 segundos
-
-
-ALVO = 20
+ALVO = 80  # porcentagem que você quer atingir
 
 def tocar_alarme():
-    print("🔌 Bateria chegou a 20%! Hora de conectar o carregador.")
+    print("🔔 Bateria chegou a 90%! Desconecte o carregador.")
     for _ in range(3):
-        winsound.Beep(800, 500)
+        winsound.Beep(1000, 500)  # frequência, duração (ms)
         time.sleep(0.5)
 
 while True:
@@ -92,10 +70,32 @@ while True:
     porcentagem = bateria.percent
     carregando = bateria.power_plugged
 
-    print(f"Bateria: {porcentagem}% (carregando: {carregando})")
+    print(f"Bateria: {porcentagem}% {'(carregando)' if carregando else '(desplugado)'}")
 
-    if not carregando and porcentagem <= ALVO:
+    if carregando and porcentagem >= ALVO:
         tocar_alarme()
-        break
+        break  # sai do loop depois do aviso
 
-    time.sleep(30)
+    time.sleep(30)  # checa a cada 30 segundos
+
+
+# ALVO = 22
+
+# def tocar_alarme():
+#     print("🔌 Bateria chegou a 20%! Hora de conectar o carregador.")
+#     for _ in range(3):
+#         winsound.Beep(800, 500)
+#         time.sleep(0.5)
+
+# while True:
+#     bateria = psutil.sensors_battery()
+#     porcentagem = bateria.percent
+#     carregando = bateria.power_plugged
+
+#     print(f"Bateria: {porcentagem}% (carregando: {carregando})")
+
+#     if not carregando and porcentagem <= ALVO:
+#         tocar_alarme()
+#         break
+
+#     time.sleep(30)
