@@ -6,3 +6,10 @@ __pycache__/
 data/
 *.parquet
 touch .gitignore
+myenv/
+.env/
+venv/
+*.csv
+*.zip
+*.xlsx
+.ipynb_checkpoints/
