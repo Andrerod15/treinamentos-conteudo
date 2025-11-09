@@ -12,6 +12,6 @@ Ele pode ser acessado através do link abaixo:
 
 **Nome do arquivo:** `bolsapl_tratado.parquet`  
 **Formato:** Parquet (`.parquet`)  
-**Tamanho aproximado:** ~X GB  
+**Tamanho aproximado:** 500mb - 1Gb  
 **Descrição:** Contém dois meses de pagamentos do Bolsa Família concatenados e tratados em Polars.
 
